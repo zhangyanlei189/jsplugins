@@ -17,12 +17,30 @@
 </div>
 <script>
     var conNode = $("#con");
-    for(var i=0;i<800;i++){
+    /*for(var i=0;i<800;i++){
         y = (-3/6400)*i*i+i;
         var spanNode = $("<span>");
         spanNode.css({"top":y,"left":i});
         conNode.append(spanNode);
-    }
+    }*/
+
+
+
+    var i = 0;
+    var timmer = setInterval(function(){
+        i++;
+        if(i>500){
+            clearInterval(timmer);
+            return;
+        }
+        y = (-3/6400)*i*i+i;
+        var spanNode = $("<span>");
+        spanNode.css({"top":y,"left":i});
+        conNode.append(spanNode);
+
+    },100);
+
+
 </script>
 </body>
 </html>
