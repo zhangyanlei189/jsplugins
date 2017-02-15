@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/jquery.js"></script>
+    <style>
+        *{padding: 0;margin: 0;}
+        div{width: 800px;height: 500px; border: 1px solid #ccc;margin: 0 auto;position: relative;}
+        div span{position: absolute;background: #000000;border-radius: 1px;width: 1px;height: 1px;}
+
+    </style>
+</head>
+<body>
+<div id="con">
+    <span></span>
+</div>
+<script>
+    var conNode = $("#con");
+    for(var i=0;i<800;i++){
+        y = (-3/6400)*i*i+i;
+        var spanNode = $("<span>");
+        spanNode.css({"top":y,"left":i});
+        conNode.append(spanNode);
+    }
+</script>
+</body>
+</html>
