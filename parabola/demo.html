@@ -29,7 +29,7 @@
     var i = 0;
     var timmer = setInterval(function(){
         i++;
-        if(i>500){
+        if(i>800){
             clearInterval(timmer);
             return;
         }
@@ -38,7 +38,8 @@
         spanNode.css({"top":y,"left":i});
         conNode.append(spanNode);
 
-    },100);
+    },1);
+
 
 
 </script>
