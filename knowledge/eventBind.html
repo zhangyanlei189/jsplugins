@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+1<br>1<br>1<br>1<br>1<br>1<br>1<br>
+<script>
+
+    /*
+     *
+     *  事件绑定
+     *
+     *  注：二级dom的事件会覆盖之前绑定的事件
+     *
+     */
+    /**
+     *
+     * @param d:dom
+     * @param t:type
+     * @param i:item
+     * @param c:回调函数
+     */
+    function on(d,t,i,c){
+        d.addEventListener?d.addEventListener(t,function(e){
+            !arguments.callee.i?arguments.callee.i=1:arguments.callee.i++;
+            if(arguments.callee.i===i){
+                d.removeEventListener(t,arguments.callee,!1);
+            };
+            c(this,e,arguments.callee.i);
+        },!1):d.attachEvent&&d.attachEvent("on"+t,function(e){
+            !arguments.callee.i?arguments.callee.i=1:arguments.callee.i++;
+            if(arguments.callee.i===i){
+                d.detachEvent("on"+t,arguments.callee);
+            };
+            c(this,e,arguments.callee.i);
+        });
+    };
+
+    on(document.body,"mouseenter",3,function(d,e,i){
+        console.log("enter")
+        window.setTimeout(function(){
+            on(document.body,"mousemove",1,function(d,e,i){
+                console.log("move")
+            });
+        },3000)
+    });
+</script>
+
+</body>
+</html>
