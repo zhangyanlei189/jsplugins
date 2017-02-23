@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //闭包概念抽象
+    //简单说就是函数嵌套函数，能够读取外部函数变量的内部函数就形成了闭包作用域，更简单说“函数内部的函数”
+
+    function outer(){
+        var a = 1;
+        return function(){
+            console.log(a);
+        }
+    }
+    var inner = outer();
+    inner();
+
+    //此处的inner就是一个闭包
+    /*
+     *  闭包的作用有两点：
+     *  1、读取函数内部的变量
+     *  2、让变量的值始终保存在内存中，不被回收
+     */
+
+    function outer1(){
+        var m = 1;
+        mAdd = function(){
+            m+=1;
+        }
+        return function(){
+            console.log(m);
+        }
+    }
+
+    var closure = outer1();
+    closure();//1
+    mAdd();//获取内存中的m，再进行+1
+    closure();//2
+
+
+
+
+    var name = "The Window";
+    var object = {
+        name : "My Object",
+        getNameFunc : function(){
+            console.log(this);
+            return function(){
+                console.log(this);
+                return this.name;
+            };
+        }
+    };
+    alert(object.getNameFunc()());   //The Window
+
+    var name1 = "The Window";
+    var object1 = {
+        name1 : "My Object",
+        getNameFunc : function(){
+            console.log(this);
+            return function(){
+                console.log(this);
+                return this.name1;
+            };
+        }
+    };
+    alert(object1.getNameFunc()());//My Object
+
+
+</script>
+</body>
+</html>
