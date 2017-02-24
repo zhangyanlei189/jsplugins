@@ -5,6 +5,36 @@
     <title></title>
 </head>
 <body>
+<script>
 
+    //基本类型传参
+    //基本类型传参与基本类型复制一样，复制的是变量的值
+    var m = 10;
+    function a(n){
+        n++;
+        console.log(m);//10
+        console.log(n);//11
+    }
+    a(m);
+    console.log(m)//10
+
+
+    //引用类型传参
+    //引用类型传参和引用类型复制一样，复制的是变量的引用。两个地址仍然指向同一个堆内存中的对象
+    var obj = {
+        s:10
+    }
+    function b(o){
+        o.s++;
+        console.log(obj.s);//11
+        console.log(o.s);//11
+    }
+    b(obj);
+    console.log(obj.s);//11
+
+
+
+
+</script>
 </body>
 </html>
