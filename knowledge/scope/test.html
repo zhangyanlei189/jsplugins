@@ -2,9 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>浏览器解析顺序</title>
 </head>
 <body>
+<script>
 
+    /*
+    *   函数：浏览器对function 的解析顺序是不管function的调用顺序在前边还是在后边    浏览器扫描的时候都会放入内存
+    * /
+
+
+    //正常的function
+    /*
+        *
+        * result:
+        * function(){
+        *       console.log("正常解析");
+        * }
+        *
+        *
+     */
+    function a(){
+        console.log("正常解析");
+    }
+    console.log(a);
+
+
+
+    //function 后定义
+    /*
+        *
+        * result:
+        * function b(){
+        *   console.log("正常解析");
+        * }
+        *
+        *
+     */
+    console.log(b);
+    function b(){
+        console.log("正常解析");
+    }
+
+//**************************************************************************************************************************
+
+    /**
+     * 变量：浏览器解析的时候，一个作用域内，会先扫描var 定义的变量。如果遇到var定义的变量   则把变量初始化为undefined。
+     *      执行代码的时候会在作用域内从上到下执行。赋值操作时在执行代码的时候完成的
+     */
+
+    //正常访问
+    /**
+     * result:
+     *  0
+     */
+    function v(){
+        var m = 0;
+        console.log(m);
+    }
+    v();
+
+    /**
+     * result:
+     *  undefined
+     */
+    function h(){
+        var m ;
+        console.log(m);
+    }
+    h();
+
+    /**
+     * result:
+     *  undefined
+     */
+    function i(){
+        console.log(m);
+        var m=0 ;
+    }
+    i();
+
+    /**
+     * result:
+     *  报错：m is not defined
+     */
+    function i(){
+        console.log(m);
+    }
+    i();
+
+
+
+</script>
 </body>
 </html>
