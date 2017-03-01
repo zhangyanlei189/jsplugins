@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复制</title>
+    <script src="../../lib/jquery.js"></script>
+    <script src="jquery-zclip-master/jquery.zclip.js"></script>
+    <style>
+        *{padding: 0;margin: 0;}
+    </style>
+</head>
+<body style="padding-left: 50px;">
+<div id="content">jdagljdasgjldjsa</div><br>
+<a href="#" id="btn">复制</a><br>
+<textarea style="width: 500px;height: 500px;"></textarea>
+<script>
+    $("#btn").zclip({
+        path:"jquery-zclip-master/ZeroClipboard.swf",
+        copy:function(){
+            return $("#content").html();//返回复制的内容
+        },
+        beforeCopy:function(){//点击时的动作
+            $(this).css("background","#eee");
+        },
+        afterCopy:function(){//复制成功后的操作
+            $(this).css("background","#fff");
+            $("#content").css("background","rgb(90,287,250)");
+        }
+    });
+</script>
+</body>
+</html>
