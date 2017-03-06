@@ -16,7 +16,7 @@
 
 > 标记
 
-`function test(){
-        console.log(111);
+    fuction test(){
+        console.log("aa");
     }
-    test();`
+    test();
