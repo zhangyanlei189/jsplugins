@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <style>
-        *{padding: 0;margin: 0;}
-    </style>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
 </head>
 <body>
-<div class="wrap"></div>
+
+<ul><li>Coffee</li><li>Tea</li></ul>
+<p id="demo">单击按钮更改列表项,使用createDocumentFragment方法,然后在列表的最后一个孩子添加列表项。</p>
+<button onclick="myFunction()">点我</button>
 <script>
+    function myFunction(){
+        var d=document.createDocumentFragment();
+        d.innerHTML = "<p>创建代码片段</p>";
+        d.childNodes[0].childNodes[0].nodeValue="Milk";
+        document.getElementsByTagName("UL")[0].appendChild(d);
+    };
 
 </script>
+
 </body>
 </html>

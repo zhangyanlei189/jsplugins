@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="con"></div>
+<div id="con1"></div>
+<script>
+
+    //chrome测试下 时间 28ms
+    console.time("name2");
+    var fragment = document.createDocumentFragment();
+    for(var i=0;i<10000;i++){
+        var p = document.createElement("p");
+        p.innerHTML="dagjisdag";
+        fragment.appendChild(p);
+    }
+    document.getElementById("con1").appendChild(fragment);
+    console.timeEnd("name2");
+
+    //chrome测试下 时间18ms
+    console.time("name1");
+    var str = "";
+    for(var i=0;i<10000;i++){
+        str+="<p>dagjisdag<p>"
+    }
+    document.getElementById("con").innerHTML = str;
+    console.timeEnd("name1");
+
+
+
+
+
+</script>
+</body>
+</html>
