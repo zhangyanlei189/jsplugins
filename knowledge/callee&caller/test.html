@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>callee和caller</title>
+</head>
+<body>
+<script>
+    //callee
+    function m(){
+        console.log(arguments.callee);//函数本身
+    }
+    m();
+
+
+    var fn = function(n){
+        if(n==0){
+            return n;
+        }
+        return n+arguments.callee(--n);
+    }
+    var f = fn(100);
+    console.log(f);//5050
+
+
+
+
+
+    //caller
+    function test(){
+        return test.caller;
+    }
+    function t(){
+        console.log(test());//t函数本身
+    }
+    t();
+
+
+
+
+</script>
+</body>
+</html>

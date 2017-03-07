@@ -1,10 +1,13 @@
 # 知识点目录
-### closure      闭包
 
-### dom          dom
+### callee&caller       callee和caller的区别
 
-### eventBind    兼容的绑定事件方法
+### closure             闭包
 
-### scope        作用域
+### dom                 dom
 
-### variable        变量
+### eventBind           兼容的绑定事件方法
+
+### scope               作用域
+
+### variable            变量
