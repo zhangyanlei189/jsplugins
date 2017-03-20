@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+&times;
+<script>
+    function A(){
+        this.name = "mm";
+    }
+    A.prototype.age = 15;
+
+    var a = new A();
+    console.log(a.hasOwnProperty("name"));//true
+    console.log(a.hasOwnProperty("age"));//false
+
+    console.log(a.propertyIsEnumerable("name"));//true
+    console.log(a.propertyIsEnumerable("age"));//false   原型属性不能用于枚举
+
+
+
+
+    for(var m in a){
+        console.log(m+"-----"+a[m]);
+    }
+    //结果：name --- mm
+    //     age --- 15
+
+
+
+</script>
+</body>
+</html>

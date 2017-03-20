@@ -34,7 +34,7 @@
     String(null); //null
     String(undefined); //undefined
     var a = null;a.toString();  //解析错误
-    
+
 
 
 
