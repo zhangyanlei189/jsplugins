@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap1 {
+            width: 300px;
+            height: 300px;
+            margin: 10px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .con {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+        .bg {
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            border: 0px solid #00c1de;
+            animation: identifier 5s linear;
+        }
+
+        @-webkit-keyframes identifier {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(720deg);
+            }
+        }
+
+        @keyframes identifier {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(720deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap1">
+    <div class="con">
+        测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测测
+    </div>
+    <div class="bg"></div>
+</div>
+<script>
+    /**
+     * 在css中可以任意调节wrap1和con的width和height。但是，两者须对应
+     *
+     */
+    var dom = $(".con");
+    var _init = {
+        x:0,//显示文本width的一半，即w/2
+        y:0,//显示文本height的一半,即h/2
+        b:0//覆盖层的边框width
+    };
+
+    function init(obj){
+        _init.x = obj.width()/2;
+        _init.y = obj.height()/2;
+        _init.b = Math.sqrt(_init.x*_init.x*4+_init.y*_init.y*4)/2;//单边框的宽至少是文本容器的对角线的一半，才能保证文本全覆盖，否则，开始转的时候会漏出4个角的内容
+        $(".bg").css({"border-width":_init.b,"left":-(_init.b-_init.x),"top":-(_init.b-_init.y)});
+    }
+    init(dom);
+
+    function start(){
+        $(".bg").animate({"width":2*_init.x , "height":2*_init.y, "left": -_init.b, "top": -_init.b}, 5000);
+    }
+    start();
+</script>
+</body>
+</html>
