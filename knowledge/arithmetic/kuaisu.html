@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function quickSort(arr){
+        if(arr.length<=1){return arr;}
+        var center = arr.splice(Math.floor(arr.length/2),1)[0];
+        var left=[],right=[];
+        for(var i = 0;i<arr.length;i++){
+            if(arr[i]<center){
+                left.push(arr[i]);
+            }else{
+                right.push(arr[i]);
+            }
+        }
+        return arguments.callee(left).concat([center],arguments.callee(right));//使用callee 指向当前函数
+    }
+
+    var val = quickSort([5,3,8,7,2,7,4,6,9,3]);
+    console.log(val);
+</script>
+</body>
+</html>

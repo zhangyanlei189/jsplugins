@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*function a(){
+        mm = 55;//mm为全局变量
+    }
+    a();
+    console.log(window.mm);*/
+
+    function outer1(){
+        var m = 1;
+        mAdd = function(){
+            m+=1;
+        }
+        return function(){
+            console.log(m++);
+        }
+    }
+
+    var closure = outer1();
+    closure();//1
+//    mAdd();//获取内存中的m，再进行+1
+    closure();//2
+</script>
+
+</body>
+</html>
