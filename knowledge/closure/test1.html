@@ -43,7 +43,7 @@
 
 
 
-    var name = "The Window";
+    /*var name = "The Window";
     var object = {
         name : "My Object",
         getNameFunc : function(){
@@ -54,20 +54,20 @@
             };
         }
     };
-    alert(object.getNameFunc()());   //The Window
+    alert(object.getNameFunc()());   //The Window       注:闭包内的函数为全局函数
+*/
 
-    var name1 = "The Window";
-    var object1 = {
-        name1 : "My Object",
+    var name = "The Window";
+    var object = {
+        name : "My Object",
         getNameFunc : function(){
-            console.log(this);
+            var that = this;
             return function(){
-                console.log(this);
-                return this.name1;
+                return that.name;//that也作为局部变量被匿名函数引用     使用的是局部变量而不是全局变量
             };
         }
     };
-    alert(object1.getNameFunc()());//My Object
+    alert(object.getNameFunc()());
 
 
 </script>
