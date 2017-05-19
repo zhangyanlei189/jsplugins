@@ -28,7 +28,9 @@
     Number("12")            12;
     Number("1.2.3")         NaN;
     Number(new Object())    NaN;
-    Number(50)            50;
+    Number(50)              50;
+    Number("")              0;
+    Number(" ")             0;
 ###### String函数
     与toString()函数的区别，String()可以转换null,undefined；
     String(null); //null

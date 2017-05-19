@@ -13,6 +13,8 @@
     A.prototype.age = 15;
 
     var a = new A();
+    var o = new Object();
+    alert(A.prototype.isPrototypeOf(a));
     console.log(a.hasOwnProperty("name"));//true
     console.log(a.hasOwnProperty("age"));//false
 
