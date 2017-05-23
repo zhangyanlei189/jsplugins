@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../../lib/jquery.js"></script>
+</head>
+<body>
+<div>
+    <div id="d1">点我1</div><div><span></span>手机号</div>
+</div>
+<div>
+    <div id="d2">点我2</div><div><span></span>邮箱</div>
+</div>
+<script>
+    var util = {};
+    util.clockcode = function(v){
+        //curCount = 60;
+        $(v).hide();
+        $(v).next("div").show();
+        InterValObj = window.setInterval(function(){util.setRemainTime(v)},1000);
+    }
+    var InterValObj;
+    var count=5;
+    //var curCount=60;
+    util.setRemainTime = function(v){
+       if($(v).curCount==0){
+           util.stopcount(v);
+       }else{
+           $(v).curCount--;
+           $(v).next("div").children("span").html($(v).curCount);
+       }
+    }
+    util.stopcount = function(v){
+        InterValObj = null;
+        window.clearInterval(InterValObj);
+        $(v).show().next("div").hide();
+        $(v).curCount = 60;
+        $(v).next("div").children("span").html($(v).curCount);
+    }
+
+
+    $("#d1").on("click",function(){
+        $(this).curCount = 60;
+        util.clockcode($(this));
+    });
+    $("#d2").on("click",function(){
+        $(this).curCount = 60;
+        util.clockcode($(this));
+    });
+
+
+
+
+
+</script>
+</body>
+</html>

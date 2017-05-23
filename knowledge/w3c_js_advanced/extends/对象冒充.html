@@ -14,7 +14,7 @@
     }
     function ClassB(sColor,sName) {
         this.newMethod = ClassA;
-        this.newMethod(sColor);
+        this.newMethod(sColor);//调用ClassA的时候，ClassA中的this即为ClassB
         delete this.newMethod;
 
         this.name = sName;
