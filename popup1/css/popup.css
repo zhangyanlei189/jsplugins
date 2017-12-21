@@ -1,0 +1,36 @@
+/****  弹窗  *****/
+.mask{position:fixed;z-index:1000;left:0;top:0;filter:alpha(opacity=30);opacity:0.3;width:100%;height:100%;background:#000000;}
+.maskcontent{border-radius:8px;min-width:300px;height:auto;margin:-100px -250px;position:fixed;z-index:9999;top:50%;left:50%;background:#ffffff;font-family:"微软雅黑";}
+.maskcontent .title{border-radius:8px;height:40px;background:#fff;color: #555;border-bottom: 1px solid #ccc;background: #fafafa;}
+.maskcontent .title span{display:block;padding-left:20px;margin:0;line-height:40px;color:#555;text-align:left;font-size:18px;}
+.maskcontent .title .close,.maskcontent .notitle .close_btn{display:block;width:36px;height:36px;position:absolute;top:-18px;right:-18px;background:#ffffff;border-radius:18px;color:#A9A9A9;text-align:center;line-height:32px;font-size:36px;cursor:pointer;}
+.maskcontent .title .close:hover{text-decoration:none;color:#f86576;}
+.maskcontent .tip_bg{width: 70px;height: 65px;margin:10px auto;background: url("../images/sprite.png") no-repeat;background-position: -530px -140px;}
+.maskcontent .cont{margin:10px 0 20px 0;font-size:16px;line-height:24px;padding:10px;text-align:center;word-wrap: break-word;color:#555555;}
+.maskcontent .cont a.link{color: #007fff;}
+.maskcontent .foot{text-align:center;padding-bottom:10px;}
+.yesbtn{width:auto;padding:0 25px;margin:0 20px;font-size:16px;background:#5c78c3;color:#ffffff!important;border-radius:10px;border:none;font-family:"微软雅黑";cursor:pointer;outline:none;}
+.nobtn,.disabledbtn{width:auto;padding:0 25px;margin:0 20px;font-size:16px;background:#E0E0E0;color:#8F8F8F!important;border-radius:10px;border:none;font-family:"微软雅黑";cursor:pointer;outline:none;}
+.over_hidden{overflow:hidden;}
+.masktable{min-width:360px;margin:20px;border: none;}
+.masktable td{padding:10px;border: none;color: #555;}
+.masktable td input{width:154px;color:#666666;}
+.masktable td select{width:158px;height:21px;color:#666666;}
+.masktable td .loaderror{color:#22A9D6;font-size:12px;}
+
+.maskcontent .popup form td{padding: 10px;}
+.maskcontent .popup form td input{width: 260px;height: 20px;}
+.maskcontent .popup form td .check_code{width: 270px;height: 30px;border: 1px solid #aeaeae;border-radius: 8px;}
+.maskcontent .popup form td input.code{width: 160px;border: none;}
+.maskcontent .popup form td .check_code .check_btn{display: inline-block;height: 18px;padding: 0 7px;line-height: 18px;vertical-align: middle;border-left: 1px solid #db2929;color: #db2929;cursor: pointer;}
+.maskcontent .popup form .btns{text-align: center;}
+
+
+
+.popup .btns{margin: 10px 0;}
+
+.masktable td.can_add .list {width: 154px;max-height: 65px;border: 1px solid #e5e5e5;overflow-y: auto;margin-top: 2px;display: none;  }
+.masktable td.can_add .list p {  margin: 5px 0;  }
+.masktable td.can_add .list input {border: none;width: 128px;padding-left: 5px;}
+.masktable td.can_add .list a {width: 15px;height: 15px;text-align: center;line-height: 13px;font-size: 12px;vertical-align: middle;display: inline-block;border: 1px solid #858585;border-radius: 8px;vertical-align: middle;}
+

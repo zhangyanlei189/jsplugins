@@ -10,7 +10,7 @@
     //简单说就是函数嵌套函数，能够读取外部函数变量的内部函数就形成了闭包作用域，更简单说“函数内部的函数”
 
     function outer(){
-        var a = 1;
+        var a = 'm';
         return function(){
             console.log(a);
         }
@@ -34,8 +34,9 @@
             console.log(m);
         }
     }
-
+    console.log(window);
     var closure = outer1();
+    console.log(window);
     closure();//1
     mAdd();//获取内存中的m，再进行+1
     closure();//2

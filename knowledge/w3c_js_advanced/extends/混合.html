@@ -16,6 +16,7 @@
         ClassA.call(this, sColor);
         this.name = sName;
     }
+    var b = new ClassB();
     ClassB.prototype = new ClassA();
     ClassB.prototype.sayName = function () {
         alert(this.name);

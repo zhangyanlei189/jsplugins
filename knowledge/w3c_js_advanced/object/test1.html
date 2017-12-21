@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="d">
+    <ul>
+        <li id="li">点我</li>
+    </ul>
+</div>
+<script>
+    function A(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    A.prototype = {
+        ver:"1.2",
+        say:function () {
+            console.log("hi");
+        }
+    }
+
+    var a = new A(1,2);
+
+    console.log(Object.keys(a));
+
+    for(var i in a){
+        console.log(i);
+    }
+
+
+    var m = a.propertyIsEnumerable("name");// true
+    console.log(m);
+    var d = a.propertyIsEnumerable("ver"); // false
+    console.log(d);
+
+</script>
+</body>
+</html>
